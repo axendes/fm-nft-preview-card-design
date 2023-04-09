@@ -4,8 +4,8 @@ This is a solution to the [NFT preview card component challenge on Frontend Ment
 
 ## Links
 
-> Solution URL: [GitHub](https://github.com/HioFabien/qr-code-card-design)  
-> Live Site URL: [GitHub](https://hiofabien.github.io/qr-code-card-design)
+> Solution URL: [GitHub](https://github.com/HioFabien/nft-preview-card-component-main)  
+> Live Site URL: [GitHub](https://hiofabien.github.io/nft-preview-card-component-main)
 
 ## Built with
 
