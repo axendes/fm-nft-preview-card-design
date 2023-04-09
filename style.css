@@ -222,12 +222,12 @@ body {
 .attribution {
     font-size: 11px;
     text-align: center;
-    color: gray;
+    color: #aaa;
 }
 
 .attribution a {
     transition: color 100ms;
-    color: gray;
+    color: #aaa;
 }
 
 .attribution a:hover {
