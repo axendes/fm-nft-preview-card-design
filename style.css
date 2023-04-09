@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+/* -------------------------------------------------------------------Variables */
+
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+    --very-dark-blue-main-bg: hsl(217, 54%, 11%);
+    --very-dark-blue-main-shadow: hsl(215, 52%, 8%);
+    --very-dark-blue-card-bg: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+
+    --cyan-opacity: hsla(178, 100%, 50%, 0.5);
+}
+
+/* -------------------------------------------------------------------Defaults */
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Outfit, sans-serif;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    gap: 50px;
+    height: 100vh;
+
+    background-color: var(--very-dark-blue-main-bg);
+}
+
+/* -------------------------------------------------------------------Product Card */
+
+.card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1.5em 1.5em 2.1em;
+    border-radius: 1em;
+    width: 350px;
+    user-select: none;
+
+    background-color: var(--very-dark-blue-card-bg);
+    box-shadow: 0 30px 60px var(--very-dark-blue-main-shadow);
+}
+
+.inner-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.image-container {
+    border-radius: .7em;
+    height: 302px;
+    width: 302px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.product-image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+}
+
+.image-container::after {
+    position: absolute;
+    content: url(images/icon-view.svg);
+    inset: 0;
+    display: grid;
+    place-content: center;
+    pointer-events: none;
+    opacity: 0;
+
+    background-color: var(--cyan-opacity);
+    backdrop-filter: blur(2px);
+
+    transition: opacity 300ms;
+}
+
+.image-container:hover::after {
+    opacity: 1;
+}
+
+.product-name {
+    text-decoration: none;
+    width: fit-content;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    line-height: 1.5;
+
+    color: var(--white);
+
+    transition: color 100ms;
+}
+
+.product-desc {
+    line-height: 1.5;
+    font-weight: 300;
+    font-size: 18px;
+
+    color: var(--soft-blue);
+}
+
+/* -------------------------------------------------------------------Inner Style */
+
+.price-date-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    pointer-events: none;
+}
+
+.price-detail {
+    font-weight: 600;
+
+    color: var(--cyan);
+}
+
+.date-detail {
+    font-weight: 400;
+
+    color: var(--soft-blue);
+}
+
+/* -------------------------------------------------------------------Author Block */
+
+.author-block {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    padding-block-start: 15px;
+    margin-block-start: 25px;
+    border-top: 1px solid var(--very-dark-blue-line);
+}
+
+.user-image {
+    box-sizing: content-box;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 1px solid var(--white);
+    pointer-events: none;
+}
+
+.author-details {
+    font-weight: 400;
+
+    color: var(--soft-blue);
+}
+
+.author-details a {
+    text-decoration: none;
+    font-weight: 300;
+    
+    color: var(--white);
+
+    transition: color 100ms;
+}
+
+.author-details a:hover,
+.product-name:hover {
+    color: var(--cyan);
+}
+
+/* -------------------------------------------------------------------Popup */
+
+.popup-bg {
+    display: grid;
+    place-content: center;
+    position: fixed;
+    inset: -100% 0 100%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 999;
+
+    background-color: hsla(0, 0%, 0%, .3);
+    backdrop-filter: blur(5px);
+
+    transition: inset 500ms, opacity 500ms;
+}
+
+.popup-bg img {
+    pointer-events: none;
+    user-select: none;
+    object-fit: cover;
+    object-position: center;
+    margin-inline: auto;
+
+    width: min(95vw, 100%);
+}
+
+.popup-open-state {
+    pointer-events: all;
+    opacity: 1;
+    inset: 0;
+    transition: inset 500ms, opacity 500ms;
+}
+
+/* -------------------------------------------------------------------Attribution */
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: gray;
+}
+
+.attribution a {
+    transition: color 100ms;
+    color: gray;
+}
+
+.attribution a:hover {
+    color: var(--white);
+}
