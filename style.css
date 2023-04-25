@@ -220,16 +220,25 @@ body {
 /* -------------------------------------------------------------------Attribution */
 
 .attribution {
-    font-size: 11px;
+    position: absolute;
+    inset: auto 0 1rem 0;
+
+    font-size: 1rem;
     text-align: center;
-    color: #aaa;
+    font-weight: 300;
+
+    color: var(--white);
+
+    cursor: default;
 }
 
 .attribution a {
-    transition: color 100ms;
-    color: #aaa;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--white);
+    transition: color 200ms;
 }
 
 .attribution a:hover {
-    color: var(--white);
+    color: var(--cyan);
 }
