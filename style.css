@@ -5,13 +5,12 @@
     --cyan: hsl(178, 100%, 50%);
 
     --very-dark-blue-main-bg: hsl(217, 54%, 11%);
-    --very-dark-blue-main-shadow: hsl(215, 52%, 8%);
+    --very-dark-blue-main-shadow: hsla(215, 52%, 8%, .5);
     --very-dark-blue-card-bg: hsl(216, 50%, 16%);
     --very-dark-blue-line: hsl(215, 32%, 27%);
     --white: hsl(0, 0%, 100%);
 
     --cyan-opacity: hsla(178, 100%, 50%, 0.5);
-    --very-dark-blue-main-bg-opacity: hsla(217, 54%, 11%, 0.8);
 }
 
 /* ---------------------------------------------------------Default */
@@ -51,7 +50,7 @@
 
     border-radius: 1em;
     background-color: var(--very-dark-blue-card-bg);
-    box-shadow: 0 30px 60px var(--very-dark-blue-main-bg-opacity);
+    box-shadow: 0 30px 60px var(--very-dark-blue-main-shadow);
 }
 
 .content {
