@@ -1,11 +1,12 @@
-# Frontend Mentor - NFT Preview Card Component Solution
+<h1 align="center">Frontend Mentor - NFT Preview Card Component Solution</h1>
 
-This is a solution to the [NFT preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U).
+<div align="center"><a href="https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U" target="_blank">NFT preview card component challenge on Frontend Mentor</a></div>
+<div align="center"><a href="https://hiozen.github.io/fm-nft-preview-card-design/" target="_blank">Live Preview</a></div>
 
-## Built with
+<h2 align="center">Built with</h2>
 
-**Semantic HTML5 markup  
-CSS custom properties  
-CSS Grid  
-CSS Flex  
-JavaScript**
+<div align="center"><b>Semantic HTML5 markup</b></div>
+<div align="center"><b>CSS custom properties</b></div>
+<div align="center"><b>CSS Grid</b></div>
+<div align="center"><b>CSS Flex</b></div>
+<div align="center"><b>JavaScript</b></div>
