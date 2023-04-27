@@ -11,7 +11,7 @@
     --white: hsl(0, 0%, 100%);
 
     --cyan-opacity: hsla(178, 100%, 50%, 0.5);
-    --very-dark-blue-main-bg-opacity: hsla(217, 54%, 11%, 0.6);
+    --very-dark-blue-main-bg-opacity: hsla(217, 54%, 11%, 0.8);
 }
 
 /* ---------------------------------------------------------Default */
@@ -177,7 +177,7 @@
 
 .eth-author__link {
     text-decoration: none;
-    font-weight: 300;
+    font-weight: 400;
     
     color: var(--white);
 
