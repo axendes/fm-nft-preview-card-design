@@ -11,6 +11,7 @@
     --white: hsl(0, 0%, 100%);
 
     --cyan-opacity: hsla(178, 100%, 50%, 0.5);
+    --very-dark-blue-main-bg-opacity: hsla(217, 54%, 11%, 0.3);
 }
 
 /* ---------------------------------------------------------Default */
@@ -50,7 +51,7 @@
 
     border-radius: 1em;
     background-color: var(--very-dark-blue-card-bg);
-    box-shadow: 0 30px 60px var(--very-dark-blue-main-shadow);
+    box-shadow: 0 30px 60px var(--very-dark-blue-main-bg-opacity);
 }
 
 .content {
