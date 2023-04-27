@@ -4,8 +4,8 @@ This is a solution to the [NFT preview card component challenge on Frontend Ment
 
 ## Built with
 
-> **Semantic HTML5 markup  
-> CSS custom properties  
-> CSS Grid  
-> CSS Flex  
-> JavaScript**
+**Semantic HTML5 markup  
+CSS custom properties  
+CSS Grid  
+CSS Flex  
+JavaScript**
