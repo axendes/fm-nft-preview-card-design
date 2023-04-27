@@ -8,44 +8,41 @@
   <script src="script.js" defer></script>
   <title>Frontend Mentor | NFT preview card component</title>
 </head>
-<body>
-  <div class="card">
-    <div class="inner-main">
-      <div class="image-container">
-        <img class="product-image" src="images/image-equilibrium.jpg" alt="product-icon">
+<body class="body">
+  <main class="main">
+    <div class="content">
+      <div class="content__img-wrapper">
+        <img class="content__img" src="images/image-equilibrium.jpg" alt="Product preview">
       </div>
 
-      <a href="#" class="product-name">Equilibrium #3429</a>
+      <a href="#" class="content__header-link">
+        <h1 class="content__product-header">Equilibrium #3429</h1>
+      </a>
 
-      <p class="product-desc">Our Equilibrium collection promotes balance and calm.</p>
+      <p class="content__desc">Our Equilibrium collection promotes balance and calm.</p>
 
-      <div class="price-date-block">
-        <div class="price-date">
-          <img class="ethereum" src="images/icon-ethereum.svg" alt="ethereum">
-          <span class="price-detail">0.041 ETH</span>
+      <div class="content__price-date-wrapper">
+        <div class="content__price-date">
+          <img class="content__ethereum" src="images/icon-ethereum.svg" alt="Ethereum">
+          <span class="content__price">0.041 ETH</span>
         </div>
 
-        <div class="price-date">
-          <img class="clock" src="images/icon-clock.svg" alt="clock">
-          <span class="date-detail">3 days left</span>
+        <div class="content__price-date">
+          <img class="content__clock" src="images/icon-clock.svg" alt="Clock">
+          <span class="content__date">3 days left</span>
         </div>
       </div>
     </div>
 
-    <div class="author-block">
-      <img class="user-image" src="images/image-avatar.png" alt="user-image">
-      <p class="author-details">Creation of <a href="#" class="link-to-author">Jules Wyvern</a></p>
+    <div class="eth-author">
+      <img class="eth-author__img" src="images/image-avatar.png" alt="Author Picture">
+      <p class="eth-author__data">Creation of <a href="#" class="eth-author__link">Jules Wyvern</a></p>
     </div>
+  </main>
 
-  </div>
-  
-  <div class="popup-bg">
-    <img src="images/image-equilibrium.jpg" alt="product-icon">
-  </div>
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/hiozen">Hiozen</a>.
-  </div>
+  <footer class="attribution">
+    <span class="attribution__wrapper">Challenge by <a class="attribution__link" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. </span>
+    <span class="attribution__wrapper">Coded by <a class="attribution__link" href="https://github.com/hiozen">Hiozen</a>.</span>
+  </footer>
 </body>
 </html>

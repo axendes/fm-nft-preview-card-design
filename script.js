@@ -1,11 +1,27 @@
 "use strict";
 
-const imageContainer = document.querySelector(".image-container");
-const popup = document.querySelector(".popup-bg");
+const showTrigger = document.querySelector(".content__img-wrapper");
 
-imageContainer.onclick = showHidePopup;
-popup.onclick = showHidePopup;
+showTrigger.onclick = showEthereum;
 
-function showHidePopup() {
-    popup.classList.toggle("popup-open-state");
+function showEthereum() {
+    const image = showTrigger.querySelector(".content__img");
+    const clone = image.cloneNode(false);
+    const wrapper = document.createElement("div");
+
+    wrapper.onclick = () => {
+        hideEthereum(wrapper);
+    };
+
+    clone.classList.remove("content__img");
+    clone.classList.add("enlarged-eth__eth-img");
+
+    wrapper.classList.add("enlarged-eth");
+    wrapper.appendChild(clone);
+
+    document.body.insertBefore(wrapper, document.body.firstChild);
+}
+
+function hideEthereum(e) {
+    document.body.removeChild(e);
 }

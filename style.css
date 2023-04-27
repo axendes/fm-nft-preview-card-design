@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 
-/* -------------------------------------------------------------------Variables */
-
 :root {
     --soft-blue: hsl(215, 51%, 70%);
     --cyan: hsl(178, 100%, 50%);
@@ -15,7 +13,7 @@
     --cyan-opacity: hsla(178, 100%, 50%, 0.5);
 }
 
-/* -------------------------------------------------------------------Defaults */
+/* ---------------------------------------------------------Default */
 
 *,
 *::before,
@@ -23,56 +21,55 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Outfit, sans-serif;
+    font-family: "Outfit", sans-serif;
 }
 
-body {
-    display: grid;
-    place-content: center;
-    gap: 50px;
-    height: 100vh;
+.body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-block: 3rem 8rem;
 
     background-color: var(--very-dark-blue-main-bg);
+
+    user-select: none;
 }
 
-/* -------------------------------------------------------------------Product Card */
+/* ---------------------------------------------------------Main */
 
-.card {
+.main {
     position: relative;
     display: grid;
     grid-template-columns: 1fr;
-    padding: 1.5em 1.5em 2.1em;
-    border-radius: 1em;
     width: 350px;
-    user-select: none;
+    min-width: 250px;
+    padding: 1.5em 1.5em 2.1em;
+    margin-inline: 1rem;
 
+    border-radius: 1em;
     background-color: var(--very-dark-blue-card-bg);
     box-shadow: 0 30px 60px var(--very-dark-blue-main-shadow);
 }
 
-.inner-main {
+.content {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
 }
 
-.image-container {
-    border-radius: .7em;
-    height: 302px;
-    width: 302px;
-    overflow: hidden;
+.content__img-wrapper {
     position: relative;
+
+    border-radius: .7em;
+
+    overflow: hidden;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.product-image {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    pointer-events: none;
-}
-
-.image-container::after {
+.content__img-wrapper::after {
     position: absolute;
     content: url(images/icon-view.svg);
     inset: 0;
@@ -83,28 +80,36 @@ body {
 
     background-color: var(--cyan-opacity);
     backdrop-filter: blur(2px);
-
+    
     transition: opacity 300ms;
 }
 
-.image-container:hover::after {
+.content__img-wrapper:hover::after {
     opacity: 1;
 }
 
-.product-name {
+.content__img {
+    display: block;
+    width: 100%;
+
+    pointer-events: none;
+}
+
+.content__header-link {
+    display: inline-block;
+    margin-block: .25rem -.25rem;
     text-decoration: none;
-    width: fit-content;
-    font-size: 22px;
-    font-weight: 600;
-    cursor: pointer;
-    line-height: 1.5;
 
     color: var(--white);
 
     transition: color 100ms;
 }
 
-.product-desc {
+.content__product-header {
+    font-size: 22px;
+}
+
+.content__desc {
     line-height: 1.5;
     font-weight: 300;
     font-size: 18px;
@@ -112,15 +117,15 @@ body {
     color: var(--soft-blue);
 }
 
-/* -------------------------------------------------------------------Inner Style */
+/* ---------------------------------------------------------Data & Price */
 
-.price-date-block {
+.content__price-date-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.price-date {
+.content__price-date {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,21 +133,21 @@ body {
     pointer-events: none;
 }
 
-.price-detail {
+.content__price {
     font-weight: 600;
 
     color: var(--cyan);
 }
 
-.date-detail {
+.content__date {
     font-weight: 400;
 
     color: var(--soft-blue);
 }
 
-/* -------------------------------------------------------------------Author Block */
+/* ---------------------------------------------------------Author */
 
-.author-block {
+.eth-author {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -152,7 +157,7 @@ body {
     border-top: 1px solid var(--very-dark-blue-line);
 }
 
-.user-image {
+.eth-author__img {
     box-sizing: content-box;
     width: 30px;
     height: 30px;
@@ -163,13 +168,13 @@ body {
     pointer-events: none;
 }
 
-.author-details {
+.eth-author__data {
     font-weight: 400;
 
     color: var(--soft-blue);
 }
 
-.author-details a {
+.eth-author__link {
     text-decoration: none;
     font-weight: 300;
     
@@ -178,67 +183,68 @@ body {
     transition: color 100ms;
 }
 
-.author-details a:hover,
-.product-name:hover {
+.eth-author__link:hover,
+.content__header-link:hover {
     color: var(--cyan);
 }
 
-/* -------------------------------------------------------------------Popup */
+/* ---------------------------------------------------------Popup */
 
-.popup-bg {
+.enlarged-eth {
     display: grid;
-    place-content: center;
-    position: fixed;
-    inset: -100% 0 100%;
-    opacity: 0;
-    pointer-events: none;
+    justify-items: center;
+    align-items: center;
+    position: absolute;
+    inset: 0;
     z-index: 999;
 
-    background-color: hsla(0, 0%, 0%, .3);
-    backdrop-filter: blur(5px);
-
-    transition: inset 500ms, opacity 500ms;
+    background-color: hsla(0, 0%, 0%, .15);
+    backdrop-filter: blur(3px);
 }
 
-.popup-bg img {
+.enlarged-eth__eth-img {
+    max-width: 100%;
     pointer-events: none;
-    user-select: none;
-    object-fit: cover;
-    object-position: center;
-    margin-inline: auto;
-
-    width: min(95vw, 100%);
 }
 
-.popup-open-state {
-    pointer-events: all;
-    opacity: 1;
-    inset: 0;
-    transition: inset 500ms, opacity 500ms;
-}
-
-/* -------------------------------------------------------------------Attribution */
+/* ---------------------------------------------------------Footer */
 
 .attribution {
     position: absolute;
-    inset: auto 0 1rem 0;
-
+    inset: auto 0 0 0;
+    padding: 1em;
+    
     font-size: 1rem;
     text-align: center;
     font-weight: 300;
-
+    
     color: var(--white);
-
+    background-color: var(--very-dark-blue-card-bg);
+    
     cursor: default;
 }
 
-.attribution a {
+.attribution__link {
+    font-weight: 600;
     text-decoration: none;
-    font-weight: 700;
+    
     color: var(--white);
+    
     transition: color 200ms;
 }
 
-.attribution a:hover {
+.attribution__link:hover {
     color: var(--cyan);
+}
+
+/* ---------------------------------------------------------Media Queries */
+
+@media screen and (max-width: 500px) {
+    .attribution {
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+
+        font-size: .9rem;      
+    }
 }
