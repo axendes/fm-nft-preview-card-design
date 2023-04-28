@@ -1,6 +1,6 @@
 <h1 align="center">Frontend Mentor - NFT Preview Card Component Solution</h1>
 
-<div align="center"><a href="https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U" target="_blank">NFT preview card component challenge on Frontend Mentor</a></div>
+<div align="center"><a href="https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U" target="_blank">This Challenge on Frontend Mentor</a></div>
 <div align="center"><a href="https://hiozen.github.io/fm-nft-preview-card-design/" target="_blank">Live Preview</a></div>
 
 <h2 align="center">Built with</h2>
